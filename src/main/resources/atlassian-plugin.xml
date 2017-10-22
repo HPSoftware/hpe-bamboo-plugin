@@ -37,14 +37,19 @@
     <!-- 		<context>bamboo-plugin</context> -->
     <!-- 	</web-resource> -->
 
-    <taskType key="LoadRunnerTestTask" name="LoadRunner Test Task"
-              class="com.adm.bamboo.plugin.loadrunner.task.LoadRunnerTestTask">
+    <taskType key="LoadRunnerTestTask" name="LoadRunner Test Task" class="com.adm.bamboo.plugin.loadrunner.task.LoadRunnerTestTask">
         <description>Run LoadRunner tests</description>
         <category name="test"/>
         <configuration class="com.adm.bamboo.plugin.loadrunner.ui.LoadRunnerTaskConfigurator" />
         <capabilityDefaultsHelper class="com.adm.bamboo.plugin.loadrunner.task.LoadRunnerCapability" />
         <resource type="freemarker" name="edit" location="templates/loadrunner/configureLRTest.ftl"/>
         <resource type="download" name="icon" location="/images/task/loadrunner/loadrunner_icon.png"/>
+    </taskType>
+    <taskType key="TaskExecution" name="Performance Center Task" class="com.adm.bamboo.plugin.performancecenter.TaskExecution">
+        <description>Execute Performance Center load test</description>
+        <configuration class="com.adm.bamboo.plugin.performancecenter.TaskConfigurator"/>
+        <resource type="download" name="icon" location="/images/pc/pc_64x64.png"/>
+        <resource type="freemarker" name="edit" location="templates/performancecenter/configurePC.ftl"/>
     </taskType>
     <!--
     <taskType key="PerformanceCenterTestTask" name="Performance Center Test Task" class="com.hpe.bamboo.plugin.performancecenter.task.PerformanceCenterTestTask">
